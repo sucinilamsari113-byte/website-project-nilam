@@ -1,105 +1,389 @@
-.jumbotron{
-    background-color:#A8D8B5;
-    font-size:25px;
-    color:#294B3A;
-    padding:50px;
+
+/* ===== PENGATURAN DASAR ===== */
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FAF8F0;
+    color: #294B3A;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* ===== HEADER ===== */
+.jumbotron {
+    position: relative;
+    background: linear-gradient(120deg, #A8D8B5, #D9EBD9, #A8D8B5);
+    color: #294B3A;
+    text-align: center;
+    padding: 35px 20px;
+    min-height: 330px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOTO GRUP NCT DREAM */
+.header-photo {
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-4deg);
+
+    width: 190px;
+    height: 135px;
+
+    object-fit: cover;
+    border: 6px solid #F1E7D2;
+    border-radius: 8px;
+
+    box-shadow: 0 5px 12px rgba(41,75,58,0.20);
+}
+
+/* TEKS HEADER */
+.header-text {
+    width: 100%;
     text-align: center;
 }
-nav{
-    background-color:#F1E7D2;
-    padding:5px;    
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 5px;
 }
-nav a{
-    font-size: 18px;
-    font-weight: 400px;
+
+.jumbotron h1 {
+    font-size: 48px;
+    letter-spacing: 4px;
+    margin: 20px 0;
+}
+
+.decoration {
+    font-size: 22px;
+    margin: 10px;
+}
+
+.jumbotron h2 {
+    font-size: 23px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.header-bottom {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-top: 25px;
+}
+
+/* TULISAN SEBELAH KANAN */
+.header-quote {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%) rotate(5deg);
+
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    color: #496D53;
+}
+
+/* ===== NAVIGASI ===== */
+nav {
+    background-color: #F1E7D2;
+    padding: 17px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.10);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
     text-decoration: none;
-    color:#294B3A;
+    color: #294B3A;
+    font-size: 17px;
+    transition: 0.3s;
 }
-nav a:hover{
+
+nav a:hover {
+    color: #A16B4A;
     font-weight: bold;
 }
-nav li{
-    display:inline;
-    margin-right:125px;
-}
-body{
-    background-color: #FAF8F0;
-}
-.card{
-    box-shadow: 0 4px 8px 0 rgba(0 ,0 ,0, 0.8);
-    border-radius: 5px;
-    padding: 20px;
-    margin-top:20px;
-}
-main{
-    padding: 20px;
-    overflow: auto;
-}
-#content{
-    float: left;
-    width: 75%;
-    overflow: 75%;
-}
-.featured-img{
-    width: 100%;
-    max-height: 300px;
-    object-fit:contain;
-    object-position:center;
 
+/* ===== LAYOUT UTAMA ===== */
+main {
+    padding: 25px 35px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
 }
-.profile{
-    text-align: center;
+
+/* KONTEN ANGGOTA */
+.content {
+    width: 76%;
 }
-.profile img{
-    width:100%;
-    max-height: 200px;
-    object-fit: cover;
-    object-position: center;
-}
-aside{
-    float: right;
-    width: 25%;
+
+/* SIDEBAR */
+aside {
+    width: 24%;
     padding-left: 20px;
+    flex-shrink: 0;
 }
-*{
-    box-sizing: border-box;
+
+/* ===== CARD ANGGOTA ===== */
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #E8E4D8;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(41,75,58,0.13);
+    transition: 0.3s;
 }
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(41,75,58,0.20);
+}
+
+.card h2 {
+    font-size: 27px;
+    color: #294B3A;
+    margin: 0 0 10px;
+    border-left: 5px solid #A8D8B5;
+    padding-left: 12px;
+}
+
+/* ===== FOTO DAN TEKS ANGGOTA ===== */
+.member-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.featured-img {
+    display: block;
+    width: 27%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+    background: none;
+    padding: 0;
+}
+
+.member-content p {
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: justify;
+    color: #555F56;
+}
+
+/* ===== ABOUT ME ===== */
+.profile {
+    text-align: center;
+    background: linear-gradient(#FFFFFF, #F1E7D2);
+    padding: 25px 15px;
+    border: 1px solid #B7CDB9;
+}
+
+.profile h2 {
+    border: none;
+    padding: 0;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.profile .line {
+    width: 80%;
+    height: 2px;
+    background-color: #A8D8B5;
+    margin: 10px auto;
+}
+
+.profile p {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* FOTO PROFIL BULAT */
+.profile img {
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 50%;
+    border: 5px solid #DCE8FF;
+    padding: 7px;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.profile h3 {
+    font-size: 23px;
+    font-style: italic;
+    color: #496D53;
+}
+
+.about-info {
+    border-top: 1px solid #D8DCCF;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.about-info p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
 footer {
-   color:whitesmoke;
-   padding: 20px;
-   background-color:darkblue;
-   text-align: center;
-   font-weight: bold;
+    background-color: #294B3A;
+    color: #F1E7D2;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: auto;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
-}
-
-.footer-content p {
-    font-size: 0.9rem;
-}
-
-.footer-links {
-    list-style: none;
-    display: flex;
     gap: 15px;
 }
 
-.footer-links li a {
-    color:whitesmoke;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+.footer-content p {
+    font-size: 13px;
 }
 
-.footer-links li a:hover {
-    color: #3b82f6; 
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #F1E7D2;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #A8D8B5;
+}
+
+/* ===== RESPONSIVE HP ===== */
+@media screen and (max-width: 768px) {
+
+    .jumbotron {
+        padding: 25px 15px;
+        min-height: auto;
+        flex-direction: column;
+    }
+
+    .header-photo {
+        position: static;
+        transform: rotate(-3deg);
+        width: 160px;
+        height: 110px;
+        margin-bottom: 20px;
+    }
+
+    .header-quote {
+        display: none;
+    }
+
+    .jumbotron h1 {
+        font-size: 32px;
+    }
+
+    .jumbotron h2 {
+        font-size: 18px;
+    }
+
+    .small-title {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .header-bottom {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .content,
+    aside {
+        width: 100%;
+        padding: 0;
+    }
+
+    .member-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .featured-img {
+        width: 90%;
+        height: auto;
+        max-height: 250px;
+        object-fit: contain;
+    }
+
+    .member-content p {
+        font-size: 14px;
+    }
+
+    .footer-content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
